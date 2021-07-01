@@ -1,0 +1,371 @@
+# # # Nie modyfikuj żadnego z wymienionych poniżej
+# # @XYZ@
+# # \n
+# # \c
+# # ${zmienne}
+# # liczby
+
+
+
+# Ciągi interfejsu/interfejsu
+_press_enter_="Naciśnij klawisz [${GREEN}Enter${RC}], aby kontynuować"
+_enter_number_choice_="Wprowadź liczbę"
+_reboot_prompt_="Ponowne uruchomienie za ${BLUE}5${RC} sekund"
+_recovery_mode_reboot_not_required_="Nie jest wymagane ponowne uruchomienie w trybie odzyskiwania"
+_not_available_in_recovery_mode_="Niedostępne w trybie ODZYSKIWANIA"
+_press_alt_f7_="Naciśnij ${YELLOW}Alt+F7${RC} dla GUI"
+
+_function_disabled_="To jest albo wyłączone, albo na razie niedostępne"
+_chcking_net_connection_="Sprawdzanie, czy masz połączenie z Internetem przez pingowanie Gitlab"
+_net_connection_unavailable_="Twoje połączenie internetowe może być wyłączone lub nie masz połączenia z Internetem\n~ Upewnij się, że masz prawidłowe połączenie z Internetem"
+_osroot_not_located_="Nie udało się zlokalizować OSROOT.\nKod błędu 110"
+_sel_interface_theme_="Wybierz motyw interfejsu"
+_infinityUi_spoiler_="To będzie ostatni i ostatni motyw interfejsu dla GearLock, który z pewnością sprawi, że powiesz *WoW*.\nBądźcie na bieżąco"
+_supercharge_notice_classicui_="Twój system nie jest doładowany!\nMusisz to zrobić teraz! Użyj opcji 3 w menu głównym"
+_supercharge_notice_metroui_="Twój system nie jest doładowany, czy chcesz to zrobić teraz?"
+_new_update_notice_metroui_="Znaleziono nową aktualizację, czy chcesz ją wykonać?"
+_new_update_notice_classicui="${RC}Znaleziono nową aktualizację, naciśnij ${BRED}u${RC}, aby przeprowadzić aktualizację"
+_gearrec_info_="Otwórz terminal poleceń Android-x86, naciskając Alt + F1\nNastępnie wpisz gearrec i naciśnij Enter!"
+
+
+# Małe frazy
+_attention_="Uwaga"
+_warning_="Ostrzeżenie"
+_notice_="Uwaga"
+_info_="Informacje"
+_example_="Przykład"
+_information_="Informacje"
+_tak_="Tak"
+_no_="Nie"
+_done_="Gotowe"
+_select_="Wybierz"
+_confirm_="Potwierdź"
+_new_update_="Nowa aktualizacja"
+_select_folder_="Wybierz folder"
+_googleless_mode_="Tryb bez Google"
+_enter_either_="Wpisz @DUMMY@"
+
+
+_googleless_mode_info_="Ten tryb GoogleLess-Mode tymczasowo wyłącza aplikacje Google dla bieżącej sesji, aby ograniczyć aktywność w tle. Zostaną one automatycznie włączone przy następnym uruchomieniu"
+
+
+# Specyficzne dla ClassicUi
+_footer_items_classicui_="[a].O [h].Help [s].Status [u].Updater [c].Settings [x].Exit [g].GoogleLess-Mode [d].Dev-Zone [r] .Rekord-ekran"
+_sub_footer_items_="[b].Wstecz"
+
+_footer_items_extn_classicui_="[b].Wstecz [i].Zainstaluj-rozszerzenia [r].Odśwież [h].Pomoc"
+_footer_items_gxpm_classicui_="[b].Wstecz [i].View-Zainstalowane [u].Odinstaluj [r].Odśwież [s].Uruchom ponownie"
+_footer_input_prompt_classicui_="Ech, co gotujesz ^_^ Doktorku?"
+
+_redirecting_to_gxpm_="Jesteś przekierowywany do GearLock Package & Extension Manager, możesz z tego miejsca zainstalować rozszerzenia, jeśli masz pobrany dowolny instalowalny pakiet rozszerzeń"
+_extn_not_found_="Nie znaleziono zainstalowanego rozszerzenia.\n\nMożesz je uruchomić tutaj po zainstalowaniu jakiegoś rozszerzenia z menedżera pakietów"
+
+_body_gxpm_info_not_found_classicui_="Nie znaleziono pakietu/rozszerzenia GearLock...!\n Musisz umieścić pakiety/rozszerzenia GearLock w folderze ${GREEN}gearload${RC} za pomocą ${PURPLE}FX File Manager${RC}\n Następnie $ {ŻÓŁTY}[r].Odśwież${RC}"
+
+_noinput_classicui_="Nie wpisałeś niczego"
+_wronginput_classicui_="Stary, zgubiłeś się? na..da"
+
+
+
+# Specyficzne dla MetroUi
+_press_esc_metroui_info_="Naciśnij ESC, aby wrócić / wyjść"
+_metroui_more_menu_item_1_="Informacje"
+_metroui_more_menu_item_2_="Aktualizator"
+_metroui_more_menu_item_3_="Strefa deweloperska"
+_metroui_more_menu_item_4_="Ustawienia"
+_metroui_more_menu_item_5_="Ekran nagrywania"
+_metroui_more_menu_item_6_="Tryb bez Google"
+
+# Specyficzne dla GxpmUi
+_gxpm_menu_item_1_="Zainstaluj z lokalizacji niestandardowej"
+_gxpm_menu_item_2_="Zainstaluj z folderu obciążenia"
+_gxpm_menu_item_3_="Odinstaluj rozszerzenie/pakiet"
+_gxpm_menu_item_4_="Wyświetl dziennik instalacji/odinstalowywania"
+
+_gxpm_full_name_="Rozszerzenie GearLock i menedżer pakietów"
+_gxpm_full_name_installer_="Instalator rozszerzenia i pakietu GearLock"
+_gxpm_full_name_uninstaller_="Rozszerzenie GearLock i dezinstalator pakietów"
+_gxpm_full_name_zip_installer_="Instalator Flashable Zip GearLock"
+
+# Przyciski stopki GxpmUi
+_open_="Otwórz"
+_back_="Wstecz"
+_exit_="Wyjdź"
+_uninstall_="Odinstaluj"
+_view_log_="Wyświetl dziennik"
+
+_zip_flash_info_="Zamierzasz zainstalować flashable ZIP, ale powinieneś wiedzieć, że 99% z nich nie zostało stworzonych dla Androida-x86. Dlatego większość z nich prawdopodobnie się nie powiedzie, a GearLock nie ma z tym nic wspólnego, ponieważ my przeznaczone do instalacji na telefonach komórkowych.\n\n\nCzy kontynuować następujący plik zip ?"
+_sure_to_install_="Czy na pewno chcesz zainstalować"
+_sure_to_uninstall_="Czy na pewno chcesz odinstalować"
+_no_uninstallable_found_="Nie znaleziono pakietu/rozszerzenia do odinstalowania"
+_sure_to_run_="Czy na pewno chcesz uruchomić"
+_nothing_was_found_="Nic nie znaleziono!"
+_folder_is_empty_="Folder jest pusty"
+_installed_uninstalled_pak_extn_="Zainstalowane/odinstalowane pakiety/rozszerzenia"
+_gearload_dir_empty_info_="Nie znaleziono pakietu/rozszerzenia.\n\nMusisz umieścić je w folderze \Z1gearload\Zn z menedżera plików \Z2fx\Zn"
+_as_you_wish_="Dobrze, jak sobie życzysz"
+_beep_boop_="Pip, pip, pip?"
+_is_not_gxp_="nie brzmi jak pakiet lub rozszerzenie GearLock.\n\n Zrób to!?"
+_metroui_gxpm_header_meta_="Przejdź do swojego pakietu/rozszerzenia \n \nBieżąca lokalizacja"
+_reboot_manually_gxpm_info_="Pakiet / rozszerzenie umieścił żądanie ponownego uruchomienia, uruchom ponownie ręcznie, gdy skończysz!"
+_extensions_help_info_="Rozszerzenia to specjalnie zaprojektowane przez programistów funkcje rozszerzające GearLock.\nRozszerzenia mogą działać w GearLock, wykorzystując w pełni możliwości GearLocka."
+
+
+# Specyficzne dla rozszerzenia GearLock
+_gearlock_extension_runner_="Przedłużacz GearLock"
+
+
+
+
+# main.src/3
+_checking_system_="Sprawdzanie systemu"
+_system_is_supercharged_="System jest doładowany"
+_old_sys_files_found_="Znaleziono stare pliki systemowe, usuwam je"
+_supercharge_extend_img_info_="Doładowanie poprzez rozszerzenie obrazu systemu do rozmiaru 6GB"
+_supercharge_decompress_img_info_="Doładowanie przez dekompresję obrazu systemu"
+_removing_sys_img_="Usuwanie obrazu systemu"
+_syncing_drive_="Synchronizowanie dysku"
+_decompression_successful_="Dekompresja powiodła się"
+_something_went_wrong_="Coś poszło nie tak, operacja nie powiodła się"
+
+# main.src/4
+_fsbr_menu_item_1_="Kopia zapasowa systemu plików danych"
+_fsbr_menu_item_2_="System kopii zapasowej + rozruch FS"
+_fsbr_menu_item_3_="Przywróć zapisaną kopię zapasową"
+_fsbr_menu_item_4_="Wyświetl dziennik kopii zapasowych i przywracania"
+_fsbr_menu_item_5_="Wyczyść/system plików danych"
+_fsbr_menu_item_6_="Wyczyść /data/dalvik-cache"
+
+_gearlock_fsbr_="Kopia zapasowa i przywracanie systemu plików GearLock"
+_gearlock_fsbr_logs_="Dzienniki kopii zapasowych i przywracania systemów plików"
+_sel_output_dir_meta_="Przejdź do miejsca, w którym chcesz zapisać kopię zapasową, i użyj ${MBOLD}${MRED}< Wybierz folder >${MRC} \nSugeruje się użycie ${MBOLD}${MPINK}gearload${MRC} folder, ponieważ nie jest powiązany z Twoimi systemami plików \n \nBieżąca lokalizacja"
+_sel_backup_dir_meta_="Przejdź do folderu, w którym masz zapisane systemy plików kopii zapasowych, a następnie ${MBOLD}${MRED}< Otwórz >${MRC} to \n \nAktualna lokalizacja"
+_fs_restore_unavailable_="Nie można przywrócić podczas korzystania z GUI, spowoduje to awarię systemu.\n \nMusisz użyć TRYBU ODZYSKIWANIA"
+_sure_to_restore_="Czy na pewno chcesz przywrócić"
+_is_not_backup_fs_="@DUMMY@ nie jest zapasowym systemem plików"
+_fs_log_is_empty_="Plik dziennika FileSystems jest pusty"
+_is_not_folder_="@DUMMY@ nie jest folderem"
+_confirm_backup_fs_name_="Potwierdź nazwę backupFS"
+_creating_backup_fs_info_="Tworzenie skompresowanego systemu plików kopii zapasowej @DUMMY@"
+_operation_complete_="Operacja zakończona"
+_detecting_fs_time_="Wykrywanie typu FS"
+_restore_method_prompt_="Jak chcesz przywrócić kopię zapasową"
+
+
+# emisc.src/
+## 1
+# _sure_to_wipe_data_="Czy na pewno chcesz wyczyścić swoje dane"
+# _wiping_data_="Usuwanie danych"
+## 2
+_gearlock_partition_mounter_="Monter partycji GearLock"
+_partition_table_="Tabela partycji"
+_sel_partition_prompt_="Wybierz numer ${BGREEN}partycji${RC}, którą chcesz zamontować"
+_wronginput_try_again_="Błędne dane wejściowe, wprowadź ponownie poprawnie"
+_trying_to_mount_it_="Próba zamontowania"
+_failed_to_mount_="Wygląda na to, że nie udało się go zamontować"
+_successfully_mounted_="Pomyślnie zamontowany @DUMMY@ o"
+## 4
+_gearlock_data_system_img_extender_="System GearLock i rozszerzenie obrazu danych"
+_not_required_for_ext4_="Nie jest to wymagane na partycjach ext4, ponieważ nie musi używać formatu .img."
+_if_still_continue_="Czy nadal chcesz kontynuować?"
+# _preparing_environment_info_="Przygotowywanie środowiska"
+_enter_custom_img_size_="Wprowadź rozmiar obrazu w ${YELLOW}MB${RC} (zostanie przekonwertowany na format bajtowy)"
+_which_image_to_extend_="Który obraz chcesz rozszerzyć"
+_specify_img_size_method_="Jak chcesz określić rozmiar obrazu"
+_from_preset_="Z gotowych ustawień"
+_custom_size_="Rozmiar niestandardowy"
+_sel_preset_img_size_="Wybierz swój rozmiar @DUMMY@.img"
+## 5
+_gearlock_resolution_changer_="Zmieniacz rozdzielczości GearLock"
+_current_resolution_is_="Obecna rozdzielczość to:"
+_current_dpi_is_="Bieżące DPI to:"
+_gearlock_resolution_changer_header_info_="Pamiętaj, im wyższa rozdzielczość, tym większe obciążenie Twojego sprzętu"
+_how_set_it_="Jak chcesz to ustawić"
+_setting_res_="Ustawianie @DUMMY@ jako rozdzielczości"
+_enter_custom_res_prompt_="Wprowadź swoją niestandardową wartość rozdzielczości"
+_setting_resolution_info_="Ustawianie @DUMMY@ jako rozdzielczości"
+_restoring_roig_resolution_="Przywracanie oryginalnej rozdzielczości"
+## 6
+_how_do_it_="Jak chcesz to zrobić"
+_dw_install_latest_magisk_="Pobierz i zainstaluj najnowszą wersję (zalecane)"
+_sel_custom_magisk_zip_="Wybierz lokalnie niestandardowy plik magisk.zip"
+_sel_custom_magisk_zip_prompt_="Wybierz żądany plik magisk.zip"
+_gearlock_will_use_this_="Dobrze, teraz gearlock użyje @DUMMY@"
+_put_magisk_zip_gearload_info_="Umieść ${YELLOW}magisk.zip${RC} w folderze ${RC}gearload${RC}, a następnie naciśnij ${BGREEN}Enter${RC}"
+_fetching_latest_magisk_="Pobieranie najnowszej wersji Magisk z ${PURPLE}topjohnwu${RC}@${ORANGE}github/Magisk${RC}"
+_latest_magisk_is_="Najnowsza wersja Mgaiska to: ${BGREEN}@DUMMY@${RC}"
+_downloading_magisk_="Pobieranie ${BRED}Magiska @DUMMY@${RC}"
+_download_was_interrupted_="Pobieranie zostało przerwane, spróbuj ponownie"
+_unzipping_magisk_="Rozpakowywanie magisk.zip"
+_cleaning_unnecessary_merging_required_="Usuwanie niepotrzebnych plików i całkowite łączenie wymaganych plików"
+_gearlock_is_generating_bootimg_="GearLock generuje boot.img"
+_failed_to_locate_file_="Nie udało się uzyskać lokalizacji @DUMMY@"
+_pushing_gen_bootimg_="Wypychanie wygenerowanego boot.img"
+_compressing_patched_ramdisk_="Kompresowanie poprawionego ramdysku"
+_saving_ramdisk_in_sudb_="Zapisywanie tego nowo załatanego ramdysku w bazie danych programu obsługi su-handler GearLock"
+_replacing_old_ramdisk_="Zastąpienie obecnego ramdysku.img nowym, poprawionym"
+_installing_magisk_app_="Instalowanie aplikacji magisk"
+_operation_successful_="Operacja powiodła się"
+_reboot_to_see_changes_="Uruchom ponownie, aby zobaczyć zmiany"
+## 7
+_current_cpu_govs_="Obecne regulatory CPU"
+_available_cpu_govs_="Dostępne regulatory procesora"
+_sel_what_to_do_="Wybierz, co chcesz zrobić"
+_sel_what_to_change_="Co chcesz zmienić"
+_phrase_X_changer_="@DUMMY@ Zmieniacz"
+_phrase_X_freq_="@DUMMY@ częstotliwość"
+_sel_target_X_="Wybierz swój terget @DUMMY@"
+_must_close_running_apps_="Musisz zamknąć wszystkie uruchomione aplikacje przed użyciem tego"
+_auto_apply_each_boot_prompt_="Czy chcesz, aby GearLock automatycznie stosował @DUMMY@ przy każdym rozruchu?"
+_generated_gbscript_to_autoapply_="Wygenerowano skrypt GearBoot post-fs do automatycznego zastosowania @DUMMY@"
+_cpu_X_successfully_set_to_="CPU @DUMMY@ pomyślnie ustawiony na"
+_cpu_freq_details_header_="Rdzeń | Min. | Prąd | Maks."
+## 8
+# _sure_to_wipe_dalvik_cache_="Czy na pewno chcesz wyczyścić swoją pamięć podręczną dalvik?"
+# _wiping_dalvik_cache_info_="Usuwanie swojej dalvik-cache"
+## 9
+_gearlock_mac_changer_="Zmieniacz MAC GearLock"
+_current_mac_addr_by_dev_="Aktualny adres MAC według urządzenia"
+_turn_off_wifi_dev_info_="Proszę wyłączyć Wi-Fi ręcznie, jeśli to zrobiłeś przed użyciem, w przeciwnym razie może nie działać poprawnie"
+_sure_to_change_mac_="Czy chcesz zmienić swój adres MAC ???"
+_taking_down_net_devs_="Usuwanie urządzeń sieciowych"
+_evaluating_mac_info_="Ocenianie MAC dla @DUMMY@"
+_turning_net_devs_back_on_="Ponowne włączanie urządzeń sieciowych"
+_successfully_set_ran_mac_="Pomyślnie oceniono adres MAC na @DUMMY@ dla wszystkich urządzeń sieciowych"
+## 10
+_fetching_latest_opengapps_info_="Próba pobrania informacji o najnowszej wersji OpenGapps dla @DUMMY@, może trochę potrwać"
+_gearlock_will_dw_X_gapps_="GearLock pobierze teraz ${PINK}@DUMMY@${RC}"
+_for_other_gapps_download_manually_="Jeśli chcesz użyć innego wariantu, pobierz ręcznie i zainstaluj go za pomocą GXPM"
+_pushing_opengapps_to_gxpm_="Przesyłam opengapps.zip do ${GREEN}Menedżera pakietów GearLock${RC} ...\n+ Zajmie się resztą"
+_opengapps_dw_failed_="Pobieranie mogło się nie powieść, nie można kontynuować, lepiej spróbuj ponownie później"
+_failed_to_gather_opengapps_info_="Wygląda na to, że nie udało się zebrać informacji o najnowszej wersji, możesz ręcznie pobrać i zainstalować za pomocą GearLock"
+
+
+# gst.src/
+## 4
+_current_status_="Bieżący stan"
+_phrase_is_active_="jest aktywny"
+_phrase_is_unactive_="jest nieaktywny lub status niedostępny"
+_disable_="Wyłącz"
+_enable_="Włącz"
+_not_permanent_info_="Uwaga: nie jest to trwałe, po ponownym uruchomieniu zostanie automatycznie aktywowane jak zwykle"
+_X_is_already_active_="@DUMMY@ może być już aktywny lub coś innego jest nie tak"
+
+
+# gxpm/
+## zainstalować
+_phrase_running_job_="Wykonywanie zadania"
+_phrase_installation_failed_="Instalacja nie powiodła się"
+_phrase_gxpm_header_credit_="Opracowany przez @AXON i zasilany przez"
+_phrase_gen_unins_meta_="Ten skrypt dezinstalacyjny został wygenerowany automatycznie przez _GearLock_"
+## odinstaluj
+_phrase_uninstallation_failed_="Deinstalacja @DUMMY@ nie powiodła się"
+_phrase_running_custom_unins_func_="Uruchamianie niestandardowej funkcji scalonej dezinstalacji"
+_phrase_rem_files_from_auto_gen_="Usuwanie plików z listy wygenerowanej przez Gearlock"
+## dodatkowe
+_phrase_gxpm_com_public_jobs_="GXPM ukończone zadania publiczne"
+_phrase_X_is_requesting_reboot_="Ten @DUMMY@ prosi o ponowne uruchomienie"
+_phrase_allow_to_reboot_="Zezwalać na ${RED}restartowanie ${RC}?"
+## instalacja-zip
+_gearlock_is_verifying_X_integrity_="GearLock weryfikuje integralność @DUMMY@"
+_input_zip_is_broken_="Zamek wydaje się być uszkodzony"
+_not_flashable_zip_="@DUMMY@ nie jest zamkiem błyskawicznym"
+_gearlock_is_verifying_X_signature_="GearLock weryfikuje podpis @DUMMY@"
+_signature_verification_failed_="Weryfikacja zip nie powiodła się"
+_flashing_X_info_="Miga @DUMMY@, czekaj cierpliwie"
+_might_need_to_reboot_info_="W razie potrzeby może być konieczne ponowne uruchomienie"
+_raw_flash_log_is_at_="Nieprzetworzony dziennik flash jest zapisywany w @DUMMY@"
+_successfully_installed_X_="Pomyślnie zainstalowano @DUMMY@"
+_zip_installation_failed_="Instalacja @DUMMY@ mogła się nie powieść"
+
+# aktualizator
+_fetching_gearlock_update_info_="Pobieranie informacji o aktualizacji z serwera internetowego GearLock"
+_failed_to_fetch_gearlock_update_info_="Nie udało się pobrać informacji o aktualizacji, spróbuj ponownie"
+
+# ustawienia
+_settings_back_title_="Ustawienia blokady biegów"
+_settings_title_="Naciśnij 
+   
+     lub kliknij, aby włączyć lub wyłączyć wybraną opcję"
+_settings_extra_instructions_="Uwaga: '*' oznacza włączone, również naciśnięcie \Z1ESC\Zn wyłączy wszystko.\nMożesz również dokonać zaawansowanej personalizacji, edytując \Z2$GEARLOCK_RC\Zn"
+## ustawienia opcji
+_settings_bootsound_info_="Dźwięk uruchamiania, który jest odtwarzany po naciśnięciu GUI"
+_settings_gtty_info_="Jest to dodatkowy terminal poleceń po naciśnięciu ALT+F8"
+_settings_update_info_="Czy sprawdzać dostępność aktualizacji GearLock i otrzymywać powiadomienia"
+_settings_default_theme_info_="Czy ustawić bieżący motyw interfejsu jako domyślny"
+_settings_norecovery_info_="Po włączeniu pomija monit odliczania ekranu odzyskiwania"
+_settings_fixfs_info_="Po włączeniu szybko sprawdza i naprawia ExtFS / .img przy każdym rozruchu"
+_settings_loadfromfs_info_="Ustaw GearLock do ładowania z /system zamiast z pamięci RAM"
+
+_ui_about_msg_="
+GearLock to program GUI i odzyskiwania opracowany z dużą ilością czasu, cierpliwości i miłości przez SupremeGamers.
+Wstępny rozwój GearLocka rozpoczął się w 2019 roku w ramach projektu „PhoenixOS DarkMatter”.
+Jest więcej osób, które były częściowo zaangażowane w rozwój, o których chciałbym wspomnieć.
+
+    Oni są :
+        * HMTheBoy154 (współtwórca)
+        * Noc (Kontrybutor)
+        * Mido Fayad (współtwórca i darczyńca)
+        * Ahmad Moemen (współtwórca)
+        * Diaz (Darczyńca)
+        * rk (Darczyńca)
+
+    Chciałbym również podziękować :
+        * Igor Pawłow (p7zip)
+        * mcmilk (wtyczka p7zip zstd)
+        * Jack Palevich (emulator terminala)
+        * Roumen Petrov (ulepszenie terminala Emulator)
+
+Chciałbym również podziękować wszystkim innym, którzy próbowali przyczynić się do naszej społeczności w całym GearLock.
+GearLock jest otwarty dla wszystkich dystrybucji Android-x86 i nie jest objęty ABSOLUTNIE BEZ GWARANCJI.
+Nie ponosi odpowiedzialności za jakiekolwiek straty spowodowane rozszerzeniem/pakietem/modyfikacją innej firmy.
+Prawa autorskie (c) $YEAR SupremeGamers. Aby uzyskać więcej informacji i fajnych rzeczy, odwiedź stronę supreme-gamers.com
+"
+
+
+
+_ui_help_msg_="@1 Co oznacza ${BRED}System SuperCharge${RC} ?
+* Ta funkcja przenosi wszystkie skompresowane pliki z pliku system.img do niezależnego folderu systemowego w katalogu głównym systemu operacyjnego. (Dotyczy tylko partycji zewnętrznych)
+* W rezultacie otrzymujesz lepszą wydajność, stabilność i możliwość bezpośredniej modyfikacji plików systemowych z systemu Windows.
+* Uwaga: Dla NTFS i innych rodzajów partycji oraz dla Androida 7+ GearLock rozszerzy rozmiar system.img do 6GB zamiast dekompresować.
+
+@2 Czy mogę wykonać kopię zapasową całego katalogu ${YELLOW}data/system${RC} i przywrócić go później?
+* Tak, możesz. Użyj opcji ${BPURPLE}>> Kopia zapasowa i przywracanie FS${RC}
+
+@3 ${YELLOW}Jak zainstalować pakiet/przedłużenie przekładni ?${RC}
+* Pobierz pakiet/rozszerzenie gearlock i przenieś go do folderu ${BBLUE}gearload${RC} z FX File Manager.
+* Następnie użyj opcji ${BPURPLE}>> Zainstaluj / Odinstaluj (GXPM)${RC}
+* Wskazówka: możesz również wybrać z niestandardowej lokalizacji.
+
+@5 Jak mogę zbudować/wykonać niestandardowy pakiet/rozszerzenie GearLock? (Tylko programiści)
+* Wskocz do rozszerzonej stacji roboczej programisty od ${BBLUE}>> Więcej > Strefa deweloperów${RC}
+* Możesz także zbudować pakiet kernel/mesa bez robienia czegokolwiek bezpośrednio z uruchomionego mesa/kernel !
+
+@6 Jak mogę opuścić terminal dowodzenia?
+* Naciśnij ${BPURPLE}Alt+F7 / fn+Alt+F7${RC} [tylko dla wiersza poleceń android_x86]
+
+@7 Jak mogę otrzymywać aktualizacje OTA?
+* Otrzymasz powiadomienie, gdy pojawi się nowa wersja.
+* Użyj opcji ${BBLUE}>> Więcej > Updater${RC} w GearLock, aby sprawdzić/przeprowadzić aktualizację OTA.
+
+@8 Czy mogę zaktualizować/zainstalować ${BPURPLE}magisk-core${RC} bezpośrednio z GearLock?
+* Tak, przejdź do ${GREEN}>> Extra misc. funkcje > Instalator Magisk / Updater ${RC}
+
+@9 Jak naprawić ${BRED}game-crash / blackscreen (unity-engine)${RC} ?
+* Użyj ${BGREEN}>> Gry / Poprawki systemu > Naprawa Unity Game Engine ${RC}
+
+@10 Jak przełączyć program Su-Handler ${BPURPLE}(SuperSU/Magisk)${RC} ?
+* Tak, sprawdź ${RED}>> Gry / poprawki systemu ${RC}
+
+@11 Jak wyczyścić/usunąć dodatkowe moduły jądra?
+* Tak, sprawdź ${RED}>> Gry / poprawki systemu ${RC}
+
+@12 Czy mogę odblokować/odGoogle mój system?
+* Tak, sprawdź ${RED}>> Gry / poprawki systemu ${RC}
+
+@13 Czy mogę wyczyścić moje /data?
+* Tak, sprawdź ${RED}>> Extra misc. funkcje${RC}
+
+
+~$ Ostatnio edytowane przez AXON dnia 17-10-2020"
+

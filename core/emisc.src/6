@@ -1,0 +1,202 @@
+# Define vars
+COMMON_NAME="rusty-magisk"
+MODULE_PATH="$GHOME/.local/bin/$COMMON_NAME"
+OVERLAY_PATH="$OVERLAYDIR/$COMMON_NAME/init/init.superuser.rc"
+DATA_BIN_DIR="/data/.rusty-magisk"
+TITLE="${COMMON_NAME^^} Installer / Remover"
+MAGISK_BUNDLE_NAME="magisk.bundle"
+
+# Define functions
+function module.status() {
+	test "$1" == "-p" && PRINT=true
+	if test -e "$MODULE_PATH"; then
+		test -n "$PRINT" && echo "Installed:: $(magisk -v)"
+		true
+	else
+		test -n "$PRINT" && echo 'Not installed'
+		false
+	fi
+}
+
+function module.install() {
+	argv="$1"
+	shift
+	
+	{
+		
+		dialog --colors --clear --backtitle " $(gecpc "$TITLE" "#") " \
+				--title " Confirm Action " \
+				--yes-label "Stable" --no-label " Unstable-bleedingEdge " \
+				--help-button --help-label "Exit" \
+				--yesno "\n Select the version channel >" 7 100
+		RETC=$?
+
+		case "$RETC" in
+			# Stable button
+			"0")
+				{
+					VERSION_CHANNEL="stable"
+					
+				}
+			;;
+			# Unstable-bleedingEdge button
+			"1")
+				{
+					
+					VERSION_CHANNEL="unstable"
+					
+				}
+			;;
+			# Exit button
+			"2")
+				return 1
+			;;
+		esac
+		
+		fetch.magisk
+		fetch.rusty-magisk
+		mkdir -p "$DATA_BIN_DIR" || exit 1
+		
+		geco "\n+ Caching latest magisk binary and app at $DATA_BIN_DIR"
+		
+		if test "$VERSION_CHANNEL" == "stable"; then
+			nout garca x -o"$GTMP/magisk" "$GTMP/$MAGISK_BUNDLE_NAME" common/magisk.apk 'x86/magiskinit*' \
+				|| { geco "Error: Failed to extract ${MAGISK_DWL##*/}"; exit 1; }
+			local magisk_init
+			magisk_init="$GTMP/magisk/x86/magiskinit$(test "$CPU_ARCH" == "x86_64" && echo '64')"
+			chmod +x "$magisk_init"
+			"$magisk_init" -x magisk "$DATA_BIN_DIR/magisk" && chmod 755 "$DATA_BIN_DIR/magisk" || exit 1
+			rsync -a "$GTMP/$MAGISK_BUNDLE_NAME" "$DATA_BIN_DIR/magisk.apk" || exit 1
+		else
+			unzip -pj "$GTMP/$MAGISK_BUNDLE_NAME" "lib/x86/libmagisk$(test "$CPU_ARCH" == "x86" && echo '32' || echo '64').so" > "$DATA_BIN_DIR/magisk"\
+				|| { geco "Error: Failed to extract ${MAGISK_DWL##*/}"; exit 1; }
+			chmod 755 "$DATA_BIN_DIR/magisk" || exit 1
+			rsync -a "$GTMP/$MAGISK_BUNDLE_NAME" "$DATA_BIN_DIR/magisk.apk" || exit 1
+		fi
+		
+		geco "\n+ Creating overlay at gearboot/overlay" && sleep 0.5
+		mkdir -p "${OVERLAY_PATH%/*}" || { geco "Error: Failed to create overlay dir"; exit 1; }
+		
+		echo -e "
+service su_daemon /system/bin/logwrapper /sbin/magisk --daemon
+    seclabel u:r:su:s0
+    oneshot
+
+on boot
+    exec u:r:su:s0 -- /system/bin/logwrapper $MODULE_PATH
+    start su_daemon
+    exec u:r:su:s0 -- /system/bin/logwrapper /sbin/magisk --post-fs-data
+
+on property:sys.boot_completed=1
+    exec u:r:su:s0 -- /system/bin/logwrapper /sbin/magisk --service
+    exec u:r:su:s0 -- /system/bin/logwrapper /sbin/magisk --boot-complete
+
+
+" > "$OVERLAY_PATH" && chmod 750 "$OVERLAY_PATH"
+		
+		geco "\n+ Installing rusty-magisk at ~/.local/bin" && sleep 0.5
+		ckdirex "${MODULE_PATH%/*}" 755
+		case "$argv" in
+			"-string")
+					echo "$1" > "$MODULE_PATH"
+				;;
+			"-file")
+					rsync "$1" "$2"
+				;;
+		esac
+		chmod -f 755 "$MODULE_PATH" "$2" 2>/dev/null
+	}
+	RETC=$?
+	
+	sleep 5
+	
+	if test -z "$MODULE_REMOVED"; then
+		if test "$RETC" == "0"; then
+			msgbox "$TITLE" " ${_info_} " "\n Operation successful, reboot to see changes" 7 60
+			rm -rf "$GTMP/"*magisk*
+		else
+			msgbox "$TITLE" " ${_info_} " "\n Something went wrong, operation failed: $RETC" 7 60
+		fi
+	fi
+	
+}
+
+function module.remove() {
+	test ! -e "$MODULE_PATH" && msgbox "$TITLE" " ${_info_} " "\n This module is not installed" 7 60 && return
+	
+	rm -rf "$MODULE_PATH" "$OVERLAY_PATH" "$DATA_BIN_DIR" 2>/dev/null
+	RETC=$?
+	
+	if test "$RETC" == "0"; then
+		msgbox "$TITLE" " ${_info_} " "\n Module successfully removed, reboot to see changes" 7 60
+	else
+		msgbox "$TITLE" " ${_info_} " "\n Something went wrong, operation failed: $RETC" 7 60
+	fi
+	
+	MODULE_REMOVED=true
+# 	test -n "$1" && module.install $*
+}
+
+
+function fetch.magisk(){
+	! get_net_stat && exit 1
+	geco "\n+ ${_fetching_latest_magisk_}"
+	
+	local json_data VERSION
+	
+	if test "$VERSION_CHANNEL" == "stable"; then
+		VERSION="21.4"
+		MAGISK_DWL="https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip"
+	else
+		json_data="$(curl --silent "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json" \
+					| grep -A5 '"magisk":')" || { geco "Error: Failed to fetch latest magisk" && exit 1; }
+		VERSION="$(echo "$json_data" | grep '"version":' | sed -E 's/.*"([^"]+)".*/\1/')"
+		MAGISK_DWL="$(echo "$json_data" | grep '"link":' | sed -E 's/.*"([^"]+)".*/\1/')"
+	fi
+		
+	geco "\n+ ${_latest_magisk_is_/@DUMMY@/$VERSION}" && sleep 1
+	geco "\n+ ${_downloading_magisk_/@DUMMY@/$VERSION}"
+	rm -f "$GTMP/$MAGISK_BUNDLE_NAME"
+	gdload "$MAGISK_DWL" "$GTMP/$MAGISK_BUNDLE_NAME" || { geco "${_download_was_interrupted_} ..." && exit 1; }
+	
+}
+
+function fetch.rusty-magisk() {
+	geco "\n+ Fetching latest ${BRED}axonasif/rusty-magisk${RC}"
+	
+	local LINK VERSION
+	LINK="$(curl -s https://api.github.com/repos/axonasif/rusty-magisk/releases/latest \
+					| grep "browser_download_url.*\brusty-magisk_${HOST_ARCH}\b" \
+					| sed -E 's/.*"([^"]+)".*/\1/'
+				)" || { geco "Error: Failed to fetch latest rusty-magisk" && exit 1; }
+	VERSION="$(echo "$LINK" | sed 's|.*/download/||; s|/.*||')"
+	
+	geco "\n+ Latest rusty-magisk version is: ${BGREEN}$VERSION${RC}" && sleep 1
+	geco "\n+ Downloading ${BRED}rusty-magisk_${HOST_ARCH} $VERSION${RC}"
+	rm -f "$MODULE_PATH" "$GTMP/"*"$COMMON_NAME"*
+	gdload "$LINK" "$GTMP/$COMMON_NAME" || { geco "${_download_was_interrupted_} ..." && exit 1; }
+}
+
+dialog --colors --clear --backtitle " $(gecpc "$TITLE" "#") " \
+		--title " Confirm Action " \
+		--yes-label "Install" --no-label "Uninstall" \
+		--help-button --help-label "Exit" $(module.is_enabled && echo '--defaultno') \
+		--yesno "\n Current status: ${MRED}$(module.status -p)${MRC}\n What do you wanna do ?" 8 60
+RETC=$?
+
+case "$RETC" in
+	# Insall button
+	"0")
+		module.install -file "$GTMP/$COMMON_NAME" "$MODULE_PATH"
+	;;
+	# Uninstall button
+	"1")
+		module.remove
+	;;
+	# Exit button
+	"2")
+		false
+	;;
+esac
+
+nopause
